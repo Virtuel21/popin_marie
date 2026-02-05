@@ -1,0 +1,46 @@
+(() => {
+  function popupInjector() {
+    const html = ` 
+    <div class="snrs-popup-container">
+  <div class="snrs-popup">
+    <div class="snrs-close-popup-button"></div>
+    <!-- Imagen del móvil (fondo desde CSS) -->
+    <div class="snrs-popup-image"></div>
+    <!-- Contenido: logo, mensaje y botón -->
+    <div class="snrs-popup-content-box">
+      <div class="mensaje-banner"></div>
+      <div class="mensaje-subtitle">ou un Point Relais® près de vous !</div>
+      <div class="button-filled">
+        <a href="https://inpostiberia.go.link/9nFbS" target="_blank" class="snrs-download-btn">
+          Je fonce sur l'App
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+    document.querySelector('body').insertAdjacentHTML('afterbegin', html);
+  }
+  
+  function closePopupHandler() {
+    document
+      .querySelector('.snrs-popup-container')
+      .addEventListener('click', (e) => {
+        const closeSpan = document.querySelector('.snrs-popup-container');
+        const closeBtn = document.querySelector('.snrs-close-popup-button');
+        const container = document.querySelector('.snrs-close-span');
+        if (
+          e.target == closeSpan ||
+          e.target == closeBtn ||
+          e.target == container
+        ) {
+          document.querySelector('.snrs-popup-container').remove();
+        }
+      });
+  }
+  function init() {
+    popupInjector();
+    closePopupHandler();
+  }
+  init();
+})();

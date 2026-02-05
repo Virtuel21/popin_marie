@@ -1,0 +1,201 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.snrs-popup-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000000;
+  top: 0;
+  left: 0;
+  background-color: #8686862d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  font-size: 16px;
+}
+/* ===== POPUP ===== */
+.snrs-popup {
+  display: flex;
+  max-width: 914px;
+  max-height: 550px;
+  width: 100%;
+  background-color: #ffcc05;
+  position: relative;
+  z-index: 10000000;
+}
+/* ===== IMAGEN PRINCIPAL (MÓVIL EN LA MANO) ===== */
+.snrs-popup-image {
+  width: 550px;
+  height: 550px;
+  background-color: #ffcc05;
+  background-image: url("https://upload.snrcdn.net/942ce62ae3d7335add1b8e82163316d0d68ba3c0/default/origin/88961250e5764a1e89ec92f8450978bc.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+/* ===== CONTENEDOR DE CONTENIDO ===== */
+.snrs-popup-content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 486px;
+  position: relative;
+  font-size: 16px;
+  background-color: #ffcc05;
+  padding: 32px 40px;
+}
+/* Conteneur pour centrer verticalement le contenu */
+.snrs-popup-content-box > * {
+  flex-shrink: 0;
+}
+/* Mensaje grande - CENTRÉ verticalement dans la pop-in */
+.mensaje-banner {
+  width: 100%;
+  height: 120px;
+  background-image: url("https://upload.snrcdn.net/089654187a7f3816659495cc1fcb80a7356a4069/default/origin/3faadc15f2d44fa5be196acd59e96a71.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-bottom: 0px;
+}
+/* Sous-titre */
+.mensaje-subtitle {
+  width: 100%;
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  margin-top: 0px;
+}
+/* ===== BOTÓN DE CERRAR ===== */
+.snrs-close-popup-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 100000000;
+}
+.snrs-close-popup-button:hover {
+  opacity: 0.7 !important;
+}
+.snrs-close-popup-button:before,
+.snrs-close-popup-button:after {
+  position: absolute;
+  content: " ";
+  height: 18px;
+  width: 2px;
+  background-color: #000000;
+}
+.snrs-close-popup-button:before {
+  transform: rotate(45deg);
+}
+.snrs-close-popup-button:after {
+  transform: rotate(-45deg);
+}
+/* ===== BOTÓN "JE FONCE SUR L'APP" ===== */
+.button-filled {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.snrs-download-btn {
+  background-color: #000000;
+  border: none;
+  border-radius: 8px;
+  
+  /* Hauteur réduite */
+  width: 350px;
+  height: 50px;
+  padding: 0;
+  
+  /* Texte personnalisé */
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #ffcc05;
+  text-transform: uppercase;
+  text-decoration: none;
+  
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.snrs-download-btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+/* ===== RESPONSIVE (MÓVIL / TABLET) ===== */
+@media only screen and (max-width: 1080px) {
+  .snrs-popup {
+    flex-direction: column-reverse;
+    width: 250px;
+    height: 460px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .snrs-popup-content-box {
+    width: 90%;
+    height: 36%;
+    padding: 24px 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-inpost {
+    display: none;
+  }
+  .mensaje-banner {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 0px;
+    background-position: center;
+  }
+  
+  .mensaje-subtitle {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: left;
+  }
+  .snrs-popup-image {
+    width: 100%;
+    height: 75vh;
+    background-position: top;
+  }
+  .button-filled {
+    width: 100%;
+    margin-top: 5px;
+    justify-content: center;
+  }
+  .snrs-download-btn {
+    height: 38px;
+    width: 80%;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .snrs-close-popup-button {
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    right: 14px;
+  }
+  .snrs-close-popup-button:before,
+  .snrs-close-popup-button:after {
+    height: 15px;
+    width: 3px;
+  }
+}
