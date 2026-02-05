@@ -68,7 +68,7 @@
   font-size: 18px;
   font-weight: 400;
   color: #000000;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   line-height: 1.3;
   margin-top: 0px;
@@ -169,7 +169,7 @@
     font-size: 14px;
     margin-bottom: 10px;
     margin-top: 0px;
-    text-align: center;
+    text-align: left;
   }
   .snrs-popup-image {
     width: 100%;
